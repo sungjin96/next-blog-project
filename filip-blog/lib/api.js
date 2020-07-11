@@ -16,8 +16,8 @@ export function urlFor(source) {
     return builder.image(source);
 }
 
-export async function getAllBlogs() {
-    return await client.fetch(`*[_type == "blog"]{${blogFields}}`);
+export async function getAllBlogs({offset= 0, date= 'desc'} = {offset: 0, date:'desc'}) {
+    return await client.fetch(`*[_type == "blog"] | order(date ${date}) {${blogFields}}[${offset}...${offset+6}]`);
 }
 
 export async function getBlogBySlug(slug) {

@@ -1,42 +1,53 @@
-import {  Row, Col } from 'react-bootstrap';
+import {useState} from "react";
+import {Row, Button} from 'react-bootstrap';
 import PageLayout from "components/PageLayout";
 import AuthorIntro from "components/AuthorIntro";
-import CardItem from "components/CardItem";
-import CardListItem from "components/CardListItem";
-
-import { getAllBlogs } from "lib/api";
+import FilteringMenu from "components/FilteringMenu";
+import {getAllBlogs} from "lib/api";
+import {useGetBlogsPages} from "actions/pagination";
 
 export default function Home({blogs}) {
+    const [filter, setFilter] = useState({
+        view: {list: 0},
+        date: {asc: 0}
+    });
+
+    // loadMore: to load more data
+    // isLoadingMOre: is true whenever we are making request to fetch data
+    // is ReachingEnd: is true when we loaded all of the data, data is empty ( empty array )
+    const {
+        pages,
+        isLoadingMore,
+        isReachingEnd,
+        loadMore
+    } = useGetBlogsPages({blogs, filter});
+
     return (
         <PageLayout>
-            <AuthorIntro />
+            <AuthorIntro/>
+            <FilteringMenu
+                filter={filter}
+                onChange={(option, value) => {
+                    setFilter({
+                        ...filter,
+                        [option]: value
+                    })
+                }}
+            />
             <hr/>
             <Row className="mb-5">
-                {/*<Col md="10">*/}
-                {/*    /!* CardListItem STARTS *!/*/}
-                {/*    <CardListItem />*/}
-                {/*    /!* CardListItem ENDS *!/*/}
-                {/*</Col>*/}
-                {
-                    blogs.map(blog =>
-                        <Col md="4" key={blog.slug}>
-                            <CardItem
-                                author={blog.author}
-                                title={blog.title}
-                                subtitle={blog.subtitle}
-                                date={blog.date}
-                                image={blog.coverImage}
-                                slug={blog.slug}
-                                link={{
-                                    href: '/blogs/[slug]',
-                                    as: `/blogs/${blog.slug}`
-                                }}
-                            />
-                        </Col>
-                    )
-                }
-
+                {pages}
             </Row>
+            <div style={{textAlign: 'center'}}>
+                <Button
+                    onClick={loadMore}
+                    disabled={isReachingEnd || isLoadingMore}
+                    size="lg"
+                    variant="outline-secondary"
+                >
+                    {isLoadingMore ? '...' : isReachingEnd ? 'No more blogs' : 'More Blogs'}
+                </Button>
+            </div>
         </PageLayout>
     )
 }
@@ -48,7 +59,7 @@ export default function Home({blogs}) {
 // getStaticProps는 빌드할 때 한번 실행되고 새로고침을 아무리 해도 실행되지 않는다.
 // 데이터가 주기적으로 안바뀌면
 export async function getStaticProps() {
-    const blogs = await getAllBlogs();
+    const blogs = await getAllBlogs({offset: 0, date: 'desc'});
     return {
         props: {
             blogs,

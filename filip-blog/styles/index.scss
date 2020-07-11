@@ -8,7 +8,7 @@ html, body {
   background-color: #f4f7f9;
 }
 
-.clickable {
+.clickable:hover {
   cursor: pointer;
 }
 
@@ -36,6 +36,10 @@ html, body {
     z-index: 2;
     padding: 20px;
     padding-bottom: 40px;
+
+    &.no-image {
+      min-height: auto;
+    }
   }
 
   .card-body {
