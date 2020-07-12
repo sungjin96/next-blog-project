@@ -841,7 +841,7 @@
   version "1.0.0"
   resolved "https://registry.npmjs.org/@rexxars/eventsource-polyfill/-/eventsource-polyfill-1.0.0.tgz#ab46f2f44da23aedd6f51f13d92a194a5367525b"
 
-"@sanity/base@1.149.16", "@sanity/base@^1.149.16":
+"@sanity/base@1.149.16", "@sanity/base@^1.149.15":
   version "1.149.16"
   resolved "https://registry.npmjs.org/@sanity/base/-/base-1.149.16.tgz#37cee8eeb116f8f446c78c603fd1e14e90e8d812"
   dependencies:
@@ -890,6 +890,10 @@
     fs-extra "^6.0.1"
     promise-props-recursive "^1.0.0"
 
+"@sanity/cli@^1.149.13":
+  version "1.149.16"
+  resolved "https://registry.npmjs.org/@sanity/cli/-/cli-1.149.16.tgz#77fa51bfaa0b65c7065c0def14c4b6ed8138ca43"
+
 "@sanity/client@1.149.16":
   version "1.149.16"
   resolved "https://registry.npmjs.org/@sanity/client/-/client-1.149.16.tgz#7b569830617614be2427be0a0daf50ce26af5a1d"
@@ -902,7 +906,7 @@
     make-error "^1.3.0"
     object-assign "^4.1.1"
 
-"@sanity/code-input@^1.149.16":
+"@sanity/code-input@^1.149.7":
   version "1.149.16"
   resolved "https://registry.npmjs.org/@sanity/code-input/-/code-input-1.149.16.tgz#f3a815c096e209ee1c6b138b87fe5aa86bd480c9"
   dependencies:
@@ -910,7 +914,7 @@
     react-ace "^5.0.1"
     react-icons "^2.2.7"
 
-"@sanity/components@^1.149.16":
+"@sanity/components@^1.149.15":
   version "1.149.16"
   resolved "https://registry.npmjs.org/@sanity/components/-/components-1.149.16.tgz#0691eb8053928009e5e3743f8ff979fb4fd35df4"
   dependencies:
@@ -940,7 +944,7 @@
     rxjs "^6.5.3"
     string-hash "^1.1.3"
 
-"@sanity/core@^1.149.17":
+"@sanity/core@^1.149.13":
   version "1.149.17"
   resolved "https://registry.npmjs.org/@sanity/core/-/core-1.149.17.tgz#6c7c0c2071caabe5906f6f98e9ca42246a320a4b"
   dependencies:
@@ -1018,7 +1022,7 @@
     "@sanity/generate-help-url" "1.149.16"
     lodash "^4.17.15"
 
-"@sanity/default-layout@^1.149.16":
+"@sanity/default-layout@^1.149.15":
   version "1.149.16"
   resolved "https://registry.npmjs.org/@sanity/default-layout/-/default-layout-1.149.16.tgz#050638e216c689d28ba83c52dafe3d8114c4e4fc"
   dependencies:
@@ -1032,7 +1036,7 @@
     react-tippy "^1.2.3"
     rxjs "^6.5.3"
 
-"@sanity/default-login@^1.149.16":
+"@sanity/default-login@^1.149.11":
   version "1.149.16"
   resolved "https://registry.npmjs.org/@sanity/default-login/-/default-login-1.149.16.tgz#cfb73ba7727163606abaaec171a5567482e66a71"
   dependencies:
@@ -1040,7 +1044,7 @@
     prop-types "^15.6.0"
     rxjs "^6.5.3"
 
-"@sanity/desk-tool@^1.149.16":
+"@sanity/desk-tool@^1.149.15":
   version "1.149.16"
   resolved "https://registry.npmjs.org/@sanity/desk-tool/-/desk-tool-1.149.16.tgz#3caff3197b9d86ae1629b38ab80fff7d15d12fcf"
   dependencies:
@@ -1224,6 +1228,10 @@
     rxjs "^6.5.3"
     shallow-equals "^1.0.0"
 
+"@sanity/production-preview@^1.149.0":
+  version "1.149.0"
+  resolved "https://registry.npmjs.org/@sanity/production-preview/-/production-preview-1.149.0.tgz#2c83d3f67602512ff9fbb91242f38b6d9799bee7"
+
 "@sanity/react-hooks@1.149.16":
   version "1.149.16"
   resolved "https://registry.npmjs.org/@sanity/react-hooks/-/react-hooks-1.149.16.tgz#007d746b94f114c36d7585bb313955c007b5113c"
@@ -1349,7 +1357,7 @@
     es6-error "^4.0.2"
     type-of-is "^3.5.1"
 
-"@sanity/vision@^1.149.16":
+"@sanity/vision@^1.149.0":
   version "1.149.16"
   resolved "https://registry.npmjs.org/@sanity/vision/-/vision-1.149.16.tgz#154c1d3094c7ae77bc9e1ca48429e9a182fdc1bb"
   dependencies:

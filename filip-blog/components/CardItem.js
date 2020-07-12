@@ -38,7 +38,8 @@ const CardItem = ({title, subtitle, image, date, author, slug, link, mode = 'nor
                             :
                             image &&
                             <Card.Img
-                                src={urlFor(image).height(300).crop('center').fit('clip').url()}
+                                style={{height: '200px'}}
+                                src={urlFor(image).height(500).crop('center').fit('clip').url()}
                                 alt="Card image cap"
                             />
                     }
